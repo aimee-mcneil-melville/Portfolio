@@ -1,0 +1,40 @@
+main {
+  margin: auto;
+  padding: 1rem;
+  width: 800px;
+  max-width: calc(100% - 2rem);
+  line-height: 1.6;
+}
+h1 {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 1em;
+}
+
+p {
+  font-size: 1rem;
+}
+/* custom styles */
+
+.text-light {
+  color: rgb(var(--accent-light));
+}
+.text-accent {
+  color: rgb(var(--accent));
+}
+.text-dark {
+  color: rgb(var(--accent-dark));
+}
+.text-bold {
+  color: rgb(var(--accent-bold));
+}
+
+.text-gradient {
+  background-image: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400%;
+  background-position: 0%;
+}
+
