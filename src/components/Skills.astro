@@ -20,7 +20,7 @@ import { Icon } from 'astro-icon/components'
 <div>
   <p class="text-bold">Human Skills</p>
   <ul>
-    <li class="text-light"> <Icon name='ph:chats-circle-fill' class="git-icon"/> Communication</li>
+    <li class="text-light"> <Icon name='ph:chats-circle-fill'/> Communication</li>
     <li class="text-light"> <Icon name='ph:lightbulb-filament'/> Problem Solving</li>
     <li class="text-light"> <Icon name='ph:users-three'/> Team Leadership</li> 
     <li class="text-light"> <Icon name='ph:hand-heart'/> Emotional Intelligence</li> 
@@ -30,7 +30,31 @@ import { Icon } from 'astro-icon/components'
 </div>
 
 <style>
-
+[data-icon="ph:chats-circle-fill"] {
+    font-size: 2rem;
+    color: #F400FF
+    ;
+}
+[data-icon="ph:lightbulb-filament"] {
+    font-size: 2rem;
+    color: #6F00EF;
+}
+[data-icon="ph:users-three"] {
+    font-size: 2rem;
+    color: #007FFF;
+}
+[data-icon="ph:hand-heart"] {
+    font-size: 2rem;
+    color: #77FB00;
+}
+[data-icon="ph:microphone-stage"] {
+    font-size: 2rem;
+    color: #FEFF00;
+}
+[data-icon="ph:puzzle-piece"] {
+    font-size: 2rem;
+    color: #FAAB00;
+}
 
 ul {
             list-style-type: none;
