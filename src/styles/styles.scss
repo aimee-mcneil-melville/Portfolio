@@ -58,6 +58,59 @@ p {
   box-sizing: border-box;
 }
 
+
+
+$nav-bg-color: #111D4A;
+$nav-text-color: rgb(var(--accent-light));
+
+$nav-hover-colors: (
+  "home": #6F00EF,
+  "about": #007FFF,
+  "skills": #77FB00,
+  "projects": #FAAB00,
+  "contact": #F400FF
+);
+
+.navbar {
+  position: fixed;
+  top: 0; /* Aligns the navbar to the top */
+  left: 0; /* Aligns the navbar to the left */
+  width: 100%;
+  background-color: $nav-bg-color;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  z-index: 1000;
+}
+
+.nav-item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  justify-content: right;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: $nav-text-color;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease;
+  border-radius: 0.25rem;
+  display: inline-block;
+}
+
+@each $key, $color in $nav-hover-colors {
+  .nav-#{$key} .nav-link {
+    @extend .nav-link;
+    &:hover {
+      border-color: $color;
+      box-shadow: 0 0 8px 0px $color,
+                  0 0 16px 2px $color;
+      border-width: 0.75rem;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .column {
     min-width: 100%;
