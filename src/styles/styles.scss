@@ -60,6 +60,8 @@ p {
   padding-top: 3rem;
 }
 
+/* header and nav */
+
 $nav-bg-color: #111D4A;
 $nav-text-color: rgb(var(--accent-light));
 
@@ -69,26 +71,36 @@ $nav-hover-colors: (
   "skills": #77FB00,
   "projects": #FAAB00,
   "contact": #F400FF
-);
-
-.navbar {
+  );
+  
+  $home-color: map-get($nav-hover-colors, "home");
+  
+header {
   position: fixed;
   top: 0;
-  width: 85%;
+  width: 100%;
+  z-index: 1000;
   background-color: $nav-bg-color;
-  padding: 1px;
-  border-radius: 0.25rem;
-  list-style: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 1000;
+  padding: 0 20px;
+  }
+
+.navbar {
+  position: fixed;
+  right: 0;
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-.nav-item {
-  margin: 0;
-  padding-right: 5px;
-  display: inline-block;
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
 }
 
 .nav-link {
@@ -98,6 +110,19 @@ $nav-hover-colors: (
   transition: background-color 0.3s ease;
   border-radius: 0.25rem;
   display: inline-block;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: rgb(var(--accent-dark));
+  font-size: 2rem;
+  z-index: 1001;
+}
+
+.nav-toggle:hover {
+  color: $home-color;
 }
 
 @each $key, $color in $nav-hover-colors {
@@ -116,4 +141,28 @@ $nav-hover-colors: (
   .column {
     min-width: 100%;
   }
+
+  .navbar {
+    // width: 20%;
+    flex-direction: column;
+    align-items: flex-end;
+}
+  .nav-right {
+      display: none;
+      flex-direction: column;
+      background-color: $nav-bg-color;
+      position: absolute;
+      top: 100%;
+      z-index: 1000;
+      align-items: flex-end; 
+  }
+
+  .nav-right.active {
+      display: flex;
+  }
+
+  .nav-toggle {
+      display: block;
+  }
+
 }
