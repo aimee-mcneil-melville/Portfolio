@@ -1,0 +1,31 @@
+---
+import data from '../../data.json'
+
+interface Project {
+name: string
+subtitle:  string
+goal:  string
+image:  string
+tech:  string[]
+}
+
+interface Data {
+  Projects: Project[]
+}
+
+const { Projects: projects }: Data = data;
+
+---
+
+<div class="card text-light">
+{(projects).map((project, index) =>
+<div id={`project-${index}`}> 
+<p>{project.name}</p>
+<p>{project.image}</p>
+  <ul>
+    {project.tech.map((tech) => (
+    <li>{tech}</li>))}
+  </ul>
+</div>)}
+
+  </div>
