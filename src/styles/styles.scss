@@ -125,6 +125,63 @@ header {
   color: $home-color;
 }
 
+/* project cards */
+
+$card-hover-color: #FAAB00;
+
+.card-group {
+  display: grid;
+  padding: 10px;
+}
+
+.card {
+  display: flex;
+  flex: 0 0 auto;
+  width: 80%;
+  max-width: 450px;
+  margin: 15px;
+  border: 2px solid rgb(var(--accent-bold));
+  border-radius: 5px;
+  background-color: rgb(var(--accent-dark));
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+
+      &:hover {
+        border-color: $card-hover-color;
+        box-shadow: 0 0 8px 0px $card-hover-color,
+                    0 0 16px 2px $card-hover-color;
+        border-width: 0.15rem;
+      }
+    
+  }
+
+.card-image {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  width: 60%;
+}
+
+.card-name {
+  font-size: 1.5em;
+  margin: 0;
+  color: rgb(var(--accent-bold));
+}
+
+.card-list {
+  margin: 5px 0;
+  border-radius: 4px;
+  list-style: none;
+  font-weight: bold;
+}
+
+/* media queries */
+
 @each $key, $color in $nav-hover-colors {
   .nav-#{$key} .nav-link {
     @extend .nav-link;

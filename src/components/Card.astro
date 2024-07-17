@@ -17,15 +17,16 @@ const { Projects: projects }: Data = data;
 
 ---
 
-<div class="card text-light">
+<div class="card-group text-light">
 {(projects).map((project, index) =>
-<div id={`project-${index}`}> 
-<p>{project.name}</p>
-<p>{project.image}</p>
-  <ul>
-    {project.tech.map((tech) => (
-    <li>{tech}</li>))}
-  </ul>
-</div>)}
-
+  <div id={`project-${index}`} class="card"> 
+  <img src={project.image} class="card-image"/>
+    <div class="card-content">
+      <p class="card-name">{project.name}</p>
+      <ul>{project.tech.map((tech) => (
+        <li class="card-list">{tech}</li>))}
+      </ul>
+    </div>
   </div>
+)}
+</div>
