@@ -2,6 +2,7 @@
 import { db, eq, Portfolio } from 'astro:db';
 import TechList from '../components/TechList.astro';
 import Gallery from './ImageGallery.astro';
+import LinkButton from './LinkButton.astro';
 
 const {id} = Astro.props
 
@@ -24,6 +25,7 @@ const data = await db.select()
         <p>{Portfolio.goal}</p>
         <p>{Portfolio.text}</p>
         <TechList portfolioId={Portfolio.id} />
+        <LinkButton portfolioId={Portfolio.id} />
         <Gallery portfolioId={Portfolio.id} />
       </div>
   )}

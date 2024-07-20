@@ -1,4 +1,4 @@
-import { db, Portfolio, Tech, Gallery } from 'astro:db'
+import { db, Portfolio, Tech, Gallery, Links } from 'astro:db'
 
 export default async function () {
   await db.insert(Portfolio).values([
@@ -36,5 +36,29 @@ export default async function () {
     { portfolioId: 1, image: '/image4.webp' },
     { portfolioId: 2, image: '/image1.jpeg' },
     { portfolioId: 2, image: '/image3.jpg' },
+  ])
+
+  await db.insert(Links).values([
+    {
+      portfolioId: 1,
+      title: 'Github',
+      url: 'https://github.com/kahikatea-2024/Flight-Plan',
+      image: '',
+      logo: 'logos:github-icon',
+    },
+    {
+      portfolioId: 1,
+      title: 'Website',
+      url: 'https://triphive.pushed.nz/',
+      image: '',
+      logo: 'triphive-logo',
+    },
+    {
+      portfolioId: 2,
+      title: 'Github',
+      url: 'https://github.com/fatima-yar/imagehair',
+      image: '',
+      logo: 'logos:github-icon',
+    },
   ])
 }

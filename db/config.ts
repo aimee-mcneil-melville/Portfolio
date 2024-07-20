@@ -25,6 +25,16 @@ const Gallery = defineTable({
   },
 })
 
+const Links = defineTable({
+  columns: {
+    portfolioId: column.number({ references: () => Portfolio.columns.id }),
+    title: column.text(),
+    url: column.text(),
+    image: column.text(),
+    logo: column.text(),
+  },
+})
+
 export default defineDb({
-  tables: { Portfolio, Tech, Gallery },
+  tables: { Portfolio, Tech, Gallery, Links },
 })
