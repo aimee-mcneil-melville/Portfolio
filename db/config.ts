@@ -8,7 +8,6 @@ const Portfolio = defineTable({
     image: column.text(),
     goal: column.text(),
     text: column.text(),
-    tech: column.text(),
   },
 })
 

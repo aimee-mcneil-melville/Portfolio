@@ -1,0 +1,16 @@
+---
+
+import { db, eq, Portfolio, Tech } from 'astro:db';
+
+const { portfolioId } = Astro.props
+
+const data = await db.select()
+  .from(Tech)
+  .where(eq(Tech.portfolioId, portfolioId));
+
+---
+
+
+<ul>{data.map((Tech ) => (
+  <li class="card-list">{Tech.name}</li>))}
+</ul>

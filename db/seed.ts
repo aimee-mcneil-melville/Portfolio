@@ -9,7 +9,6 @@ export default async function () {
       image: '/image1.jpeg',
       goal: 'Create an application that can be used by members of the group and eventually marketed to the public.',
       text: 'this is a blurb about the project',
-      tech: 'react',
     },
     {
       title: 'Hair Salon Website',
@@ -17,7 +16,6 @@ export default async function () {
       image: '/image2.jpg',
       goal: 'A project to learn new technologies and simulate a real-world scenario.',
       text: 'this is another project blurb',
-      tech: 'astro',
     },
   ])
 

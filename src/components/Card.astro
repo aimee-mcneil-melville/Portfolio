@@ -1,42 +1,29 @@
 ---
 
-// import data from '../../data.json'
+import { db, Portfolio } from 'astro:db';
+import TechList from './TechList.astro';
 
-import { db, eq, Portfolio, Tech } from 'astro:db';
+const data: Portfolio[] = await db.select().from(Portfolio);
 
-// const projects = await db.select().from(Portfolio);
 
-const data = await db.select()
-  .from(Portfolio)
-  .innerJoin(Tech, eq(Tech.portfolioId, Portfolio.id));
-
-// interface Project {
-// title: string
-// subtitle:  string
-// image:  string
-// goal:  string
-// text: string
-// tech:  string
-// }
-
-// interface Data {
-//   Projects: Project[]
-// }
-
-// const { Projects: projects }: Data = data;
+interface Portfolio {
+id: number
+title: string
+subtitle:  string
+image:  string
+goal:  string
+text: string
+}
 
 ---
 
 <div class="card-group text-light">
-{data.map(({ Portfolio, Tech }) =>
+{data.map((Portfolio ) =>
   <div id={`project-${Portfolio.id}`} class="card"> 
   <img src={Portfolio.image} class="card-image"/>
     <div class="card-content">
       <p class="card-name">{Portfolio.title}</p>
-      <ul>{Tech.name.map((tech) => (
-        <li class="card-list">{tech.Tech.name}</li>))}
-      </ul>
-      {/* TODO make an interface for tech as an array */}
+      <TechList portfolioId={Portfolio.id} />
     </div>
   </div>
 )}
