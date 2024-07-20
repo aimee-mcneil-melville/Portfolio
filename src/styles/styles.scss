@@ -192,6 +192,39 @@ a:visited {
   text-decoration: none;
 }
 
+
+/* project page */
+
+.project-title {
+  font-size: 3em;
+  margin-top: 40px;
+  color: rgb(var(--accent-bold));
+}
+
+.project-subtitle {
+  font-size: 1.2em;
+  color: rgb(var(--accent-dark));
+}
+
+.project-image {
+  width: 70%;
+  height: auto;
+  object-fit: cover;
+  margin-top: 2em;
+  border-width: 0.2em;
+  border-style: solid;
+  border-color: rgb(var(--accent-dark));
+  border-radius: 4px;
+}
+
+.project-list {
+  margin: 5px 0;
+  border-radius: 4px;
+  list-style: none;
+  font-weight: bold;
+}
+
+
 /* media queries */
 
 @each $key, $color in $nav-hover-colors {

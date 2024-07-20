@@ -1,6 +1,5 @@
 ---
-import { db, eq, Portfolio } from 'astro:db';
-import TechList from '../../components/TechList.astro';
+import { db, Portfolio } from 'astro:db';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import ProjectDetail from '../../components/ProjectDetail.astro';
@@ -11,22 +10,11 @@ export async function getStaticPaths() {
     const id = portfolios.map(portfolio => ({
       params: { id: portfolio.id.toString() }
     }));
-    console.log('id', id)
     return id
 }
 
 const id: number = parseInt(Astro.params.id, 10); 
 
-
-
-interface Portfolio {
-id: number
-title: string
-subtitle:  string
-image:  string
-goal:  string
-text: string
-}
 ---
 <Layout title="Projects">
   <main>
