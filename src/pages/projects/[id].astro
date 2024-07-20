@@ -1,6 +1,9 @@
 ---
 import { db, eq, Portfolio } from 'astro:db';
 import TechList from '../../components/TechList.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import ProjectDetail from '../../components/ProjectDetail.astro';
 
 
 export async function getStaticPaths() {
@@ -14,9 +17,7 @@ export async function getStaticPaths() {
 
 const id: number = parseInt(Astro.params.id, 10); 
 
-const data = await db.select()
-  .from(Portfolio)
-  .where(eq(Portfolio.id, id));
+
 
 interface Portfolio {
 id: number
@@ -27,18 +28,9 @@ goal:  string
 text: string
 }
 ---
-
-<div class="">
-  {data.map((Portfolio ) =>
-    <div class=""> 
-    <img src={Portfolio.image} class=""/>
-        <h1 class="">{Portfolio.title}</h1>
-      <div class="">
-        <p class="">{Portfolio.subtitle}</p>
-        <p class="">{Portfolio.goal}</p>
-        <p class="">{Portfolio.text}</p>
-        <TechList portfolioId={Portfolio.id} />
-      </div>
-    </div>
-  )}
-  </div>
+<Layout title="Projects">
+  <main>
+    <Header/>
+    <ProjectDetail id={id}/>
+  <main/>
+</Layout>
