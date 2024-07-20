@@ -18,6 +18,13 @@ const Tech = defineTable({
   },
 })
 
+const Gallery = defineTable({
+  columns: {
+    portfolioId: column.number({ references: () => Portfolio.columns.id }),
+    image: column.text(),
+  },
+})
+
 export default defineDb({
-  tables: { Portfolio, Tech },
+  tables: { Portfolio, Tech, Gallery },
 })

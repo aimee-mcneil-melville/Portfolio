@@ -1,0 +1,19 @@
+---
+
+import { db, eq, Gallery } from 'astro:db';
+
+const { portfolioId } = Astro.props
+
+const data = await db.select()
+  .from(Gallery)
+  .where(eq(Gallery.portfolioId, portfolioId));
+
+---
+
+<div class="image-container">
+<div class="">
+<ul class="">{data.map((Gallery ) => (
+  <img class="zoom-image hover image-border" src={Gallery.image}></img>))}
+</ul>
+</div>
+</div>

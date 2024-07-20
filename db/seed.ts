@@ -1,4 +1,4 @@
-import { db, Portfolio, Tech } from 'astro:db'
+import { db, Portfolio, Tech, Gallery } from 'astro:db'
 
 export default async function () {
   await db.insert(Portfolio).values([
@@ -28,5 +28,13 @@ export default async function () {
     { portfolioId: 2, name: 'Astro' },
     { portfolioId: 2, name: 'Typescript' },
     { portfolioId: 2, name: 'Tailwind' },
+  ])
+
+  await db.insert(Gallery).values([
+    { portfolioId: 1, image: '/image2.jpg' },
+    { portfolioId: 1, image: '/image3.jpg' },
+    { portfolioId: 1, image: '/image4.webp' },
+    { portfolioId: 2, image: '/image1.jpeg' },
+    { portfolioId: 2, image: '/image3.jpg' },
   ])
 }

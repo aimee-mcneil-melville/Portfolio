@@ -1,6 +1,7 @@
 ---
 import { db, eq, Portfolio } from 'astro:db';
 import TechList from '../components/TechList.astro';
+import Gallery from './ImageGallery.astro';
 
 const {id} = Astro.props
 
@@ -16,13 +17,14 @@ const data = await db.select()
   {data.map((Portfolio ) =>
     <h1 class="project-title">{Portfolio.title}</h1>
     <div> 
-    <img src={Portfolio.image} class="project-image"/>
+    <img src={Portfolio.image} class="project-image image-border"/>
     </div>
       <div class="project- ">
         <p class="project-subtitle">{Portfolio.subtitle}</p>
         <p>{Portfolio.goal}</p>
         <p>{Portfolio.text}</p>
         <TechList portfolioId={Portfolio.id} />
+        <Gallery portfolioId={Portfolio.id} />
       </div>
   )}
   </div>
