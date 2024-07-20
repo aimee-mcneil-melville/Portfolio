@@ -1,31 +1,29 @@
 ---
-import data from '../../data.json'
 
-interface Project {
-name: string
+import { db, Portfolio } from 'astro:db';
+import TechList from './TechList.astro';
+
+const data: Portfolio[] = await db.select().from(Portfolio);
+
+
+interface Portfolio {
+id: number
+title: string
 subtitle:  string
-goal:  string
 image:  string
-tech:  string[]
+goal:  string
+text: string
 }
-
-interface Data {
-  Projects: Project[]
-}
-
-const { Projects: projects }: Data = data;
 
 ---
 
 <div class="card-group text-light">
-{(projects).map((project, index) =>
-  <div id={`project-${index}`} class="card"> 
-  <img src={project.image} class="card-image"/>
+{data.map((Portfolio ) =>
+  <div id={`project-${Portfolio.id}`} class="card"> 
+  <img src={Portfolio.image} class="card-image"/>
     <div class="card-content">
-      <p class="card-name">{project.name}</p>
-      <ul>{project.tech.map((tech) => (
-        <li class="card-list">{tech}</li>))}
-      </ul>
+      <p class="card-name">{Portfolio.title}</p>
+      <TechList portfolioId={Portfolio.id} />
     </div>
   </div>
 )}
