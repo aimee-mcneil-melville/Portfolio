@@ -1,0 +1,44 @@
+---
+import { db, eq, Portfolio } from 'astro:db';
+import TechList from '../../components/TechList.astro';
+
+
+export async function getStaticPaths() {
+  const portfolios = await db.select().from(Portfolio)
+    const id = portfolios.map(portfolio => ({
+      params: { id: portfolio.id.toString() }
+    }));
+    console.log('id', id)
+    return id
+}
+
+const id: number = parseInt(Astro.params.id, 10); 
+
+const data = await db.select()
+  .from(Portfolio)
+  .where(eq(Portfolio.id, id));
+
+interface Portfolio {
+id: number
+title: string
+subtitle:  string
+image:  string
+goal:  string
+text: string
+}
+---
+
+<div class="">
+  {data.map((Portfolio ) =>
+    <div class=""> 
+    <img src={Portfolio.image} class=""/>
+        <h1 class="">{Portfolio.title}</h1>
+      <div class="">
+        <p class="">{Portfolio.subtitle}</p>
+        <p class="">{Portfolio.goal}</p>
+        <p class="">{Portfolio.text}</p>
+        <TechList portfolioId={Portfolio.id} />
+      </div>
+    </div>
+  )}
+  </div>
