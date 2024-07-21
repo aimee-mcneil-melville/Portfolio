@@ -17,10 +17,10 @@ text: string
 
 ---
 
-<div class="card-group text-light">
+<div class="wrap-container text-light">
 {data.map((Portfolio ) =>
 <a class="unstyle-a" href={`projects/${Portfolio.id}`}>
-  <div id={`project-${Portfolio.id}`} class="card hover"> 
+  <div id={`project-${Portfolio.id}`} class="card media-hover"> 
   <img src={Portfolio.image} class="card-image"/>
     <div class="card-content">
       <p class="card-name">{Portfolio.title}</p>
