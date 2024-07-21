@@ -1,0 +1,32 @@
+---
+import { db, eq, Portfolio } from 'astro:db';
+import TechList from '../components/TechList.astro';
+import Gallery from './ImageGallery.astro';
+import LinkButton from './LinkButton.astro';
+
+const {id} = Astro.props
+
+const data = await db.select()
+  .from(Portfolio)
+  .where(eq(Portfolio.id, id));
+
+---
+
+<div class="text-light section">
+  {data.map((Portfolio ) =>
+    <h1 class="project-title flex-center">{Portfolio.title}</h1>
+    <div class="flex-center wrapper-20">
+    <img src={Portfolio.image} class="project-image image-border"/>
+    </div>
+        <div class="flex-start">
+          <div class="project-content">
+        <p class="text-dark">{Portfolio.subtitle}</p>
+        <p>{Portfolio.goal}</p>
+        <p>{Portfolio.text}</p>
+      </div>
+        <TechList portfolioId={Portfolio.id} />
+      </div>
+        <LinkButton portfolioId={Portfolio.id} />
+        <Gallery portfolioId={Portfolio.id} />
+  )}
+  </div>

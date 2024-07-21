@@ -1,0 +1,24 @@
+---
+import { db, Portfolio } from 'astro:db';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import ProjectDetail from '../../components/ProjectDetail.astro';
+
+
+export async function getStaticPaths() {
+  const portfolios = await db.select().from(Portfolio)
+    const id = portfolios.map(portfolio => ({
+      params: { id: portfolio.id.toString() }
+    }));
+    return id
+}
+
+const id: number = parseInt(Astro.params.id, 10); 
+
+---
+<Layout title="Projects">
+  <main>
+    <Header/>
+    <ProjectDetail id={id}/>
+  <main/>
+</Layout>

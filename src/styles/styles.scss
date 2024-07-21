@@ -5,12 +5,14 @@ main {
   max-width: calc(100% - 2rem);
   line-height: 1.6;
 }
+
 h1 {
   font-size: 3rem;
   font-weight: 600;
   line-height: 1;
   margin-bottom: 1px;
 }
+
 h3 {
   font-size: 2rem;
   font-weight: 400;
@@ -21,17 +23,41 @@ h3 {
 p {
   font-size: 1rem;
 }
-/* custom styles */
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* link styles */
+
+.unstyle-a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* custom colours */
 
 .text-light {
   color: rgb(var(--accent-light));
 }
+
 .text-accent {
   color: rgb(var(--accent));
 }
+
 .text-dark {
   color: rgb(var(--accent-dark));
 }
+
 .text-bold {
   color: rgb(var(--accent-bold));
 }
@@ -43,24 +69,6 @@ p {
   background-size: 400%;
   background-position: 0%;
 }
-
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.column {
-  flex: 1;
-  min-width: 25px;
-  box-sizing: border-box;
-}
-
-.section {
-  padding-top: 3rem;
-}
-
-/* header and nav */
 
 $nav-bg-color: #111D4A;
 $nav-text-color: rgb(var(--accent-light));
@@ -74,6 +82,56 @@ $nav-hover-colors: (
   );
   
   $home-color: map-get($nav-hover-colors, "home");
+
+  $card-hover-color: #FAAB00;
+
+.media-hover {
+  &:hover {
+    border-color: $card-hover-color;
+    box-shadow: 0 0 8px 0px $card-hover-color,
+                0 0 16px 2px $card-hover-color;
+    border-width: 0.15rem;
+  }
+}
+
+
+/* layout */
+
+.wrapper-20 {
+  gap: 20px;  
+}
+
+.wrapper-50 {
+  gap: 50px;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+.column {
+  flex: 1;
+  min-width: 25px;
+  box-sizing: border-box;
+}
+
+.section {
+  padding-top: 3rem;
+}
+
+.wrap-container {
+  flex-wrap: wrap;
+}
+
+/* header and nav */
   
 header {
   position: fixed;
@@ -91,16 +149,12 @@ header {
   position: fixed;
   right: 0;
   padding-right: 15px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
 }
 
 .nav-right {
   display: flex;
   align-items: center;
   gap: 10px;
-  list-style: none;
 }
 
 .nav-link {
@@ -125,6 +179,108 @@ header {
   color: $home-color;
 }
 
+/* project cards */
+
+.card {
+  display: flex;
+  flex: 0 0 auto;
+  width: 80%;
+  max-width: 450px;
+  margin: 15px;
+  border: 0.2em solid rgb(var(--accent-bold));
+  border-radius: 5px;
+  background-color: rgb(var(--accent-dark));
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+.card-image {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  width: 60%;
+}
+
+.card-name {
+  font-size: 1.5rem;
+  margin: 0;
+  color: rgb(var(--accent-bold));
+}
+
+/* project page */
+
+.project-title {
+  font-size: 3rem;
+  margin-top: 40px;
+  color: rgb(var(--accent-dark));
+}
+
+.project-image {
+  width: 70%;
+  height: auto;
+  object-fit: cover;
+  margin-top: 2em;
+}
+
+.image-border {
+  border-width: 0.2em;
+  border-style: solid;
+  border-color: rgb(var(--accent-bold));
+  border-radius: 4px;
+}
+
+.project-content {
+  justify-content: space-between;
+  align-items: flex-start; 
+  margin-right: 3rem;
+}
+
+/* zoom images */
+
+.zoom-image {
+  width: 28%;
+  height: auto;
+  margin: 1em;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zoom-image:hover {
+  transform: scale(1.8);
+  z-index: 10;
+}
+
+/* buttons */
+
+.link-button {
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: rgb(var(--accent-dark));
+  background-color: rgb(var(--accent-light));
+  border-radius: 8px;
+
+&:hover {
+  color: rgb(var(--accent-light));
+  background-color: rgb(var(--accent-dark));
+}
+}
+
+/* list */
+
+.item-list {
+  margin: 0;
+  border-radius: 4px;
+  font-weight: bold;
+  align-items: flex-start; 
+}
+
+/* media queries */
+
 @each $key, $color in $nav-hover-colors {
   .nav-#{$key} .nav-link {
     @extend .nav-link;
@@ -143,7 +299,6 @@ header {
   }
 
   .navbar {
-    // width: 20%;
     flex-direction: column;
     align-items: flex-end;
 }
@@ -163,6 +318,11 @@ header {
 
   .nav-toggle {
       display: block;
+  }
+
+  .project-content {
+    flex-direction: column; 
+    align-items: flex-start;
   }
 
 }

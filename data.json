@@ -1,0 +1,32 @@
+{
+  "Projects": [
+    {
+      "name": "Trip Hive",
+      "subtitle": "My team's final group project at Dev Academy. We continue to add new features.",
+      "goal": "Create an application that can be used by members of the group and eventually marketed to the public.",
+      "image": "/image1.jpeg",
+      "tech": ["react", "typescript", "knex", "sqlite3", "bulma"]
+    },
+    {
+      "name": "Hair Salon Website",
+      "subtitle": "A team project to build a new website for a hair salon.",
+      "goal": "A project to learn new technologies and simulate a real-world scenario.",
+      "image": "/image2.jpg",
+      "tech": ["astro", "astrodb", "typescript", "tailwind"]
+    },
+    {
+      "name": "Snap Snap",
+      "subtitle": "A solo project focused on state management and REST APIs.",
+      "goal": "A project I wanted to create earlier in Dev Academy, now with extra features and full stack. Hopefully a bit of fun for anyone who sees it!",
+      "image": "/image3.jpg",
+      "tech": ["react", "typescript", "knex", "sqlite3"]
+    },
+    {
+      "name": "My Portfolio",
+      "subtitle": "This very website! I wanted to create a site where people can see what I'm all about.",
+      "goal": "",
+      "image": "/image4.webp",
+      "tech": ["astro", "typescript", "sass"]
+    }
+  ]
+}

@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.8.0",
+    "@astrojs/db": "^0.12.0",
     "@iconify-icons/logos": "^1.2.36",
     "@iconify-icons/ph": "^1.2.5",
     "@iconify-json/logos": "^1.1.43",

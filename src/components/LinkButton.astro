@@ -1,0 +1,21 @@
+---
+
+import { Icon } from 'astro-icon/components';
+import { db, eq, Links } from 'astro:db';
+
+const { portfolioId } = Astro.props
+
+const data = await db.select()
+  .from(Links)
+  .where(eq(Links.portfolioId, portfolioId));
+
+---
+
+
+    
+    <div class="flex-center">{data.map((link) => (
+      <a href={link.url} class="wrapper-50">
+        <button class="link-button"> <Icon name= {link.logo}/> {link.title}</button>
+      </a>
+      ))}
+  </div>
