@@ -21,6 +21,13 @@ h3 {
 p {
   font-size: 1rem;
 }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
 /* custom styles */
 
 .text-light {
@@ -223,21 +230,23 @@ a:visited {
 }
 
 .project-list {
-  margin: 5px 0;
+  margin: 0;
   border-radius: 4px;
   list-style: none;
   font-weight: bold;
 }
 
-/* images */
-
-.image-container {
+.project-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;      
+  justify-content: space-between;
+  align-items: flex-start; 
 }
 
+/* gallery images */
+
+.image-container {
+  flex-wrap: wrap;
+}
 
 .zoom-image {
   width: 28%;
@@ -251,6 +260,29 @@ a:visited {
   z-index: 10;
 }
 
+/* buttons */
+
+.link-button {
+  font-size: 1em;
+  padding:5px;
+  margin:5px
+}
+
+/* layout */
+
+.wrapper-50 {
+  gap: 50px;
+}
+
+.wrapper-20 {
+  gap: 20px;  
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* media queries */
 
 @each $key, $color in $nav-hover-colors {
@@ -291,6 +323,11 @@ a:visited {
 
   .nav-toggle {
       display: block;
+  }
+
+  .project-content {
+    flex-direction: column; 
+    align-items: flex-start;
   }
 
 }

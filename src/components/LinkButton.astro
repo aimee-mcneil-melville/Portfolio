@@ -14,8 +14,8 @@ const data = await db.select()
 
     
     <div class="">{data.map((link) => (
-      <a href={link.url} class="">
-        <button class=""> <Icon name= {link.logo}/> {link.title}</button>
+      <a href={link.url} class="wrapper-50">
+        <button class="link-button"> <Icon name= {link.logo}/> {link.title}</button>
       </a>
       ))}
   </div>

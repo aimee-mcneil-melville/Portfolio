@@ -10,23 +10,23 @@ const data = await db.select()
   .from(Portfolio)
   .where(eq(Portfolio.id, id));
 
-
-
 ---
 
 <div class="text-light section">
   {data.map((Portfolio ) =>
-    <h1 class="project-title">{Portfolio.title}</h1>
-    <div> 
+    <h1 class="project-title flex">{Portfolio.title}</h1>
+    <div class="flex wrapper-20">
     <img src={Portfolio.image} class="project-image image-border"/>
     </div>
-      <div class="project- ">
-        <p class="project-subtitle">{Portfolio.subtitle}</p>
+        <div class="flex project-content">
+          <div>
+        <p class="project-subtitle tech-list">{Portfolio.subtitle}</p>
         <p>{Portfolio.goal}</p>
         <p>{Portfolio.text}</p>
+      </div>
         <TechList portfolioId={Portfolio.id} />
+      </div>
         <LinkButton portfolioId={Portfolio.id} />
         <Gallery portfolioId={Portfolio.id} />
-      </div>
   )}
   </div>
