@@ -234,12 +234,13 @@ a:visited {
   border-radius: 4px;
   list-style: none;
   font-weight: bold;
+  align-items: flex-start; 
 }
 
 .project-content {
-  display: flex;
   justify-content: space-between;
   align-items: flex-start; 
+  margin-right: 50px;
 }
 
 /* gallery images */
@@ -278,10 +279,16 @@ a:visited {
   gap: 20px;  
 }
 
-.flex {
+.flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+  .flex-start {
+  display: flex;
+  justify-content: center;
+  align-items: start;
 }
 /* media queries */
 

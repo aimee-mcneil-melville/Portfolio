@@ -14,13 +14,13 @@ const data = await db.select()
 
 <div class="text-light section">
   {data.map((Portfolio ) =>
-    <h1 class="project-title flex">{Portfolio.title}</h1>
-    <div class="flex wrapper-20">
+    <h1 class="project-title flex-center">{Portfolio.title}</h1>
+    <div class="flex-center wrapper-20">
     <img src={Portfolio.image} class="project-image image-border"/>
     </div>
-        <div class="flex project-content">
-          <div>
-        <p class="project-subtitle tech-list">{Portfolio.subtitle}</p>
+        <div class="flex-start">
+          <div class="project-content">
+        <p class="project-subtitle">{Portfolio.subtitle}</p>
         <p>{Portfolio.goal}</p>
         <p>{Portfolio.text}</p>
       </div>

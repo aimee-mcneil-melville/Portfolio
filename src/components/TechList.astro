@@ -10,7 +10,7 @@ const data = await db.select()
 
 ---
 
-<div class="column">
+<div>
 <ul class="text-light"> <p class="text-bold">Tech Skills</p> {data.map((Tech ) => (
   <li class="project-list">{Tech.name}</li>))}
 </ul>

@@ -10,8 +10,8 @@ const data = await db.select()
 
 ---
 
-<div class="flex wrapper-20">
-<div class="flex image-container">{data.map((Gallery ) => (
+<div class="flex-center wrapper-20">
+<div class="flex-center image-container">{data.map((Gallery ) => (
   <img class="zoom-image hover image-border" src={Gallery.image}></img>))}
 </div>
 </div>
