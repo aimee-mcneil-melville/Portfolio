@@ -6,36 +6,51 @@ export default async function () {
       title: 'Trip Hive',
       subtitle:
         "My team's final group project at Dev Academy. We continue to add new features.",
-      image: '/image1.jpeg',
+      image: '/triphive/events.png',
       goal: 'Create an application that can be used by members of the group and eventually marketed to the public.',
-      text: 'this is a blurb about the project',
+      text: '',
     },
     {
       title: 'Hair Salon Website',
       subtitle: 'A team project to build a new website for a hair salon.',
-      image: '/image2.jpg',
+      image: '/hairsalon/home.png',
       goal: 'A project to learn new technologies and simulate a real-world scenario.',
-      text: 'this is another project blurb',
+      text: '',
+    },
+    {
+      title: 'My Portfolio',
+      subtitle:
+        "This very website! I wanted to create a site where people can see what I'm all about.",
+      image: '/image3.jpg',
+      goal: '',
+      text: '',
     },
   ])
 
   await db.insert(Tech).values([
-    { portfolioId: 1, name: 'React' },
-    { portfolioId: 1, name: 'Typescript' },
-    { portfolioId: 1, name: 'Knex' },
-    { portfolioId: 1, name: 'SqLite3' },
-    { portfolioId: 1, name: 'Bulma' },
-    { portfolioId: 2, name: 'Astro' },
-    { portfolioId: 2, name: 'Typescript' },
-    { portfolioId: 2, name: 'Tailwind' },
+    { portfolioId: 1, name: 'React', icon: 'simple-icons:react' },
+    { portfolioId: 1, name: 'Typescript', icon: 'simple-icons:typescript' },
+    { portfolioId: 1, name: 'Vite Testing', icon: 'simple-icons:vitest' },
+    { portfolioId: 1, name: 'Knex', icon: 'simple-icons:knexdotjs' },
+    { portfolioId: 1, name: 'SqLite3', icon: 'simple-icons:sqlite' },
+    { portfolioId: 1, name: 'Bulma', icon: 'simple-icons:bulma' },
+    { portfolioId: 1, name: 'Github Projects', icon: 'simple-icons:github' },
+    { portfolioId: 2, name: 'Astro', icon: 'simple-icons:astro' },
+    { portfolioId: 2, name: 'Typescript', icon: 'simple-icons:typescript' },
+    { portfolioId: 2, name: 'Tailwind', icon: 'simple-icons:tailwindcss' },
+    { portfolioId: 2, name: 'Github Projects', icon: 'simple-icons:github' },
+    { portfolioId: 3, name: 'Astro', icon: 'simple-icons:astro' },
+    { portfolioId: 3, name: 'Typescript', icon: 'simple-icons:typescript' },
+    { portfolioId: 3, name: 'Sass', icon: 'simple-icons:sass' },
   ])
 
   await db.insert(Gallery).values([
-    { portfolioId: 1, image: '/image2.jpg' },
-    { portfolioId: 1, image: '/image3.jpg' },
-    { portfolioId: 1, image: '/image4.webp' },
-    { portfolioId: 2, image: '/image1.jpeg' },
-    { portfolioId: 2, image: '/image3.jpg' },
+    { portfolioId: 1, image: '/triphive/schedule.png' },
+    { portfolioId: 1, image: '/triphive/profile.png' },
+    { portfolioId: 1, image: '/triphive/events-l.png' },
+    { portfolioId: 1, image: '/triphive/signup.png' },
+    { portfolioId: 2, image: '/hairsalon/services.png' },
+    { portfolioId: 2, image: '/hairsalon/portfolio.png' },
   ])
 
   await db.insert(Links).values([
@@ -44,7 +59,7 @@ export default async function () {
       title: 'Github',
       url: 'https://github.com/kahikatea-2024/Flight-Plan',
       image: '',
-      logo: 'logos:github-icon',
+      logo: 'simple-icons:github',
     },
     {
       portfolioId: 1,
@@ -58,7 +73,7 @@ export default async function () {
       title: 'Github',
       url: 'https://github.com/fatima-yar/imagehair',
       image: '',
-      logo: 'logos:github-icon',
+      logo: 'simple-icons:github',
     },
   ])
 }

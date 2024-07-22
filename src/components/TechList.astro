@@ -13,6 +13,6 @@ const data = await db.select()
 
 <div>
 <ul class="text-light"> <p class="text-bold">Tech Skills</p> {data.map((Tech ) => (
-  <li class="item-list">{Tech.name} </li>))}
+  <li class="item-list"> <Icon name={Tech.icon}/> {Tech.name} </li>))}
 </ul>
 </div>

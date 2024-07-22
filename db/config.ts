@@ -15,6 +15,7 @@ const Tech = defineTable({
   columns: {
     portfolioId: column.number({ references: () => Portfolio.columns.id }),
     name: column.text(),
+    icon: column.text(),
   },
 })
 
