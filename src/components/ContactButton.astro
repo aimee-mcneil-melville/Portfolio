@@ -1,0 +1,24 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { href, icon, name } = Astro.props;
+---
+
+<div>
+<a href={href} class="flex-stretch unstyle-a">
+  <button class="link-button flex-center"> <Icon name={icon}/>{name}</button>
+</a>
+</div>
+
+<style>
+[data-icon] {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+[data-icon="ph:envelope"] {
+  font-size: 2rem;
+  color: #6F00EF;
+}
+
+</style>
