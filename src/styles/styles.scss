@@ -73,17 +73,18 @@ a:visited {
 $nav-bg-color: #111D4A;
 $nav-text-color: rgb(var(--accent-light));
 
-$nav-hover-colors: (
-  "home": #6F00EF,
-  "about": #007FFF,
-  "skills": #77FB00,
-  "projects": #FAAB00,
-  "contact": #F400FF
-  );
+$neon-colors: (
+  "indigo": rgb(var(--neon-indigo)),
+  "blue": rgb(var(--neon-blue)),
+  "green": rgb(var(--neon-green)),
+  "orange": rgb(var(--neon-orange)),
+  "yellow": rgb(var(--neon-yellow)),
+  "pink": rgb(var(--neon-pink)),
+);
   
-  $home-color: map-get($nav-hover-colors, "home");
 
-  $card-hover-color: #FAAB00;
+
+  $card-hover-color: rgb(var(--neon-orange));
 
 .media-hover {
   &:hover {
@@ -176,7 +177,7 @@ header {
 }
 
 .nav-toggle:hover {
-  color: $home-color;
+  color: rgb(var(--neon-indigo))
 }
 
 /* project cards */
@@ -280,9 +281,12 @@ header {
   align-items: flex-start; 
 }
 
+
+
+
 /* media queries */
 
-@each $key, $color in $nav-hover-colors {
+@each $key, $color in $neon-colors {
   .nav-#{$key} .nav-link {
     @extend .nav-link;
     &:hover {
