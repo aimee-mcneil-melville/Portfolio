@@ -39,7 +39,7 @@ export default async function () {
     { portfolioId: 2, name: 'Typescript', icon: 'simple-icons:typescript' },
     { portfolioId: 2, name: 'Tailwind', icon: 'simple-icons:tailwindcss' },
     { portfolioId: 2, name: 'Github Projects', icon: 'simple-icons:github' },
-    { portfolioId: 3, name: 'Astro', icon: 'simple-icons:astro' },
+    { portfolioId: 3, name: 'Astro || Astro DB', icon: 'simple-icons:astro' },
     { portfolioId: 3, name: 'Typescript', icon: 'simple-icons:typescript' },
     { portfolioId: 3, name: 'Sass', icon: 'simple-icons:sass' },
   ])
@@ -74,6 +74,13 @@ export default async function () {
       url: 'https://github.com/fatima-yar/imagehair',
       image: '',
       logo: 'simple-icons:github',
+    },
+    {
+      portfolioId: 2,
+      title: 'Video Demo',
+      url: 'https://www.youtube.com/watch?v=f6n5flc4xxc',
+      image: '',
+      logo: 'simple-icons:youtube',
     },
   ])
 }
