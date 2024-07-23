@@ -25,6 +25,7 @@
     "typescript": "^5.5.3"
   },
   "devDependencies": {
-    "@iconify-json/simple-icons": "^1.1.109"
+    "@iconify-json/simple-icons": "^1.1.109",
+    "wrangler": "^3.65.1"
   }
 }
