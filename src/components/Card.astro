@@ -19,12 +19,12 @@ text: string
 
 <div class="wrap-container text-light">
 {data.map((Portfolio ) =>
-<a class="unstyle-a" href={`projects/${Portfolio.id}`}>
+<a class="unstyle-a flex-center" href={`projects/${Portfolio.id}`}>
   <div id={`project-${Portfolio.id}`} class="card media-hover"> 
   <img src={Portfolio.image} class="card-image"/>
     <div class="card-content">
       <p class="card-name">{Portfolio.title}</p>
-      <TechList portfolioId={Portfolio.id} />
+      {/* <TechList portfolioId={Portfolio.id} /> */}
     </div>
   </div>
   </a>

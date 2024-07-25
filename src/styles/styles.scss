@@ -70,7 +70,7 @@ a:visited {
   background-position: 0%;
 }
 
-$nav-bg-color: #111D4A;
+$nav-bg-color: rgb(var(--background));
 $nav-text-color: rgb(var(--accent-light));
 
 $neon-colors: (
@@ -183,23 +183,22 @@ header {
 /* project cards */
 
 .card {
-  display: flex;
-  flex: 0 0 auto;
-  width: 80%;
-  max-width: 450px;
-  margin: 15px;
+  max-width: 650px;
+  margin-top: 15px;
   border: 0.2em solid rgb(var(--accent-bold));
   border-radius: 5px;
-  background-color: rgb(var(--accent-dark));
+  background: var(--accent-gradient);
   overflow: hidden;
   box-sizing: border-box;
   transition: border-color 0.3s, box-shadow 0.3s;
   }
 
 .card-image {
-  width: 50%;
+  width: 100%;
   height: auto;
   object-fit: cover;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 .card-content {
