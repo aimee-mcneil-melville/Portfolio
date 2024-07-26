@@ -14,8 +14,8 @@ const data = await db.select()
 
 <div class="text-light section">
   {data.map((Portfolio ) =>
-    <h1 class="project-title flex-center">{Portfolio.title}</h1>
-    <div class="flex-center wrapper-20">
+    <h1 class="project-title">{Portfolio.title}</h1>
+    <div class="wrapper-20">
     <img src={Portfolio.image} class="project-image image-border"/>
     </div>
         <div class="flex-start">
@@ -24,9 +24,11 @@ const data = await db.select()
         <p>{Portfolio.goal}</p>
         <p>{Portfolio.text}</p>
       </div>
-        <TechList portfolioId={Portfolio.id} />
       </div>
-        <LinkButton portfolioId={Portfolio.id} />
+        <div class="flex-start">
+        <TechList portfolioId={Portfolio.id} />
+        {/* <LinkButton portfolioId={Portfolio.id} /> */}
+        </div>
         <Gallery portfolioId={Portfolio.id} />
   )}
   </div>
