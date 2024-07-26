@@ -11,10 +11,10 @@ const data = await db.select()
 
 ---
 
-<div class="column-container">
+<div class="column-container spacing">
   <p class="text-bold">Tech Skills</p> 
 <ul class="text-light column-double">{data.map((Tech ) => (
-  <li class="item-list flex-start glow-border"> <Icon name={Tech.icon}/> {Tech.name} </li>
+  <li class="item-list flex-center glow-border"> <Icon name={Tech.icon}/> {Tech.name} </li>
   ))}
 </ul>
 </div>
@@ -24,5 +24,15 @@ const data = await db.select()
 .text-bold {
   text-align: center;
 }
+.align {
+  display: grid;
+  align-items: center
+}
+
+
+.spacing {
+  margin-right: 150px;
+}
+
 
 </style>

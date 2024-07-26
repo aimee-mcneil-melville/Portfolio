@@ -12,10 +12,13 @@ const data = await db.select()
 ---
 
 
-    
-    <div class="flex-center">{data.map((link) => (
-      <a href={link.url} class="wrapper-50">
-        <button class="link-button"> <Icon name= {link.logo}/> {link.title}</button>
+    <div class="column-container">
+      <p>Want to know more?</p>
+<div class="text-light column-single">{data.map((link) => (
+      <a href={link.url} class="unstyle-a">
+        <button class="item-list flex-center link-button glow-border"> <Icon name= {link.logo}/> {link.title}</button>
       </a>
       ))}
   </div>
+</div>
+
