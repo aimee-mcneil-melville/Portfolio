@@ -1,5 +1,6 @@
 ---
 
+import Icon from 'astro-iconify';
 import { db, eq, Gallery } from 'astro:db';
 
 const { portfolioId } = Astro.props
@@ -8,10 +9,91 @@ const data = await db.select()
   .from(Gallery)
   .where(eq(Gallery.portfolioId, portfolioId));
 
+ 
 ---
 
-<div class="flex-center wrapper-20">
-<div class="flex-center wrap-container">{data.map((Gallery ) => (
-  <img class="zoom-image media-hover image-border" src={Gallery.image}></img>))}
+<div class="gallery-wrapper">
+  <div class="gallery">{data.map((Gallery ) => (
+    <img class="gallery-item" src={Gallery.image}></img>))}
+  </div>
+  <button class="gallery-control prev"><Icon name="ph:caret-circle-left"></Icon></button>
+  <button class="gallery-control next"><Icon name="ph:caret-circle-right"></Icon></button>
 </div>
-</div>
+
+
+<style>
+  .gallery-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .gallery {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+  }
+  
+  .gallery-item {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .gallery-control {
+    position: absolute;
+    top: 50%;
+    width: 3em;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(var(--accent-light));
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    transform: translateY(-50%);
+    z-index: 1000;
+  }
+
+  .prev {
+    left: 1em;
+  }
+
+    .next {
+    right: 1em;
+  }
+  
+</style>
+
+
+<script>
+
+const prevButton = document.querySelector<HTMLButtonElement>('.prev');
+const nextButton = document.querySelector<HTMLButtonElement>('.next');
+const gallery = document.querySelector<HTMLButtonElement>('.gallery');
+const items = document.querySelectorAll('.gallery-item');
+let index = 0;
+
+function updategallery() {
+  const itemWidth = items[0].clientWidth;
+  if (gallery) {
+    gallery.style.transform = `translateX(${-index * itemWidth}px)`;
+  }
+}
+
+if (prevButton && nextButton) {
+  prevButton.addEventListener('click', showPrev);
+  nextButton.addEventListener('click',showNext );
+}
+
+function showPrev() {
+    index = (index > 0) ? index - 1 : items.length - 1;
+    updategallery();
+}
+
+function showNext() {
+    index = (index < items.length - 1) ? index + 1 : 0;
+    updategallery();
+}
+
+   </script>
