@@ -136,7 +136,7 @@ $neon-colors: (
   display: grid;
   grid-template-columns: repeat(2, minmax(200px, 1fr));
   row-gap: 20px;
-  column-gap: 100px;
+  column-gap: 75px;
 }
 
 .column-container {
@@ -239,7 +239,7 @@ header {
   background-color: rgb(var(--background));
   color: rgb(var(--accent-light));
   font-size: 1rem;
-  width: 150px;
+  min-width: 150px;
 
 &:hover {
   color: rgb(var(--accent-light));

@@ -4,22 +4,39 @@ import ContactButton from "../ContactButton.astro";
 ---
 
 <div id="contact" class="section">
-  <h3 class="text-gradient">Contact Me</h3>
-    <p class="text-light">Want to get in touch? Send a message here! </p>
+  <div class="line-break">
+    <h3 class="text-gradient">Contact Me</h3>
+    <div class="column-double">
+      <div>
+      <p class="text-light">Want to get in touch? Send a message here! </p>
+      <div class="column-double">
+      <ContactButton 
+      href="mailto:hello@aimeenz.com", 
+      icon="ph:envelope", 
+      name="hello@aimeenz.com" />
+      
+      <ContactButton 
+      href="https://www.linkedin.com/in/aimee-mcneil-melville/", 
+      icon="logos:linkedin-icon", 
+      name="Linkedin" />
   </div>
+</div>
   
-  <ContactButton 
-  href="mailto:hello@aimeenz.com", 
-  icon="ph:envelope", 
-  name="hello@aimeenz.com" />
-  
-  <ContactButton 
-  href="https://www.linkedin.com/in/aimee-mcneil-melville/", 
-  icon="logos:linkedin-icon", 
-  name="Linkedin" />
-  
+  <div>
   <p class="text-light">Or take a look around my Github: </p>
   <ContactButton 
   href="https://github.com/aimee-mcneil-melville", 
-  icon="logos:github-icon", 
+  icon="simple-icons:github", 
   name="Github" />
+</div>
+</div>
+</div>
+</div>
+
+<style>
+
+.line-break {
+  border-top: 2px solid  rgb(var(--accent-bold));
+}
+
+</style>
