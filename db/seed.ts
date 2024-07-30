@@ -5,17 +5,17 @@ export default async function () {
     {
       title: 'Trip Hive',
       subtitle:
-        "My team's final group project at Dev Academy. We continue to add new features.",
-      image: '/triphive/events.png',
-      goal: 'Create an application that can be used by members of the group and eventually marketed to the public.',
-      text: '',
+        "My team's final group project at Dev Academy. We continue to expand and add new features.",
+      image: '/triphive/triphive-logo.png',
+      goal: 'An application that can be used by members of the project team and eventually marketed to the public.',
+      text: 'Going on a trip in a group? Trip Hive will keep everyone in the loop! The idea for Trip Hive came about from some personal experiences within my final project group. The concept is a travel companion app for a group of people, so that everyone has access to information and is accountable and responsible for their time. Groups of friends, families, bands, and corporate travel are just some of the use cases for this app.',
     },
     {
       title: 'Hair Salon Website',
       subtitle: 'A team project to build a new website for a hair salon.',
       image: '/hairsalon/home.png',
       goal: 'A project to learn new technologies and simulate a real-world scenario.',
-      text: '',
+      text: "I was invited in to this personal project by a member of my cohort. We created a website for a hair salon, and learned new technology in the process. We chose to learn Astro due to it's speed, flexibility, and server-side rendering.",
     },
     {
       title: 'My Portfolio',
@@ -23,7 +23,7 @@ export default async function () {
         "This very website! I wanted to create a site where people can see what I'm all about.",
       image: '/image3.jpg',
       goal: '',
-      text: '',
+      text: 'For this project I decided to use Astro for a second time - this time including Astro DB. Throughout this project I have gained more knowledge on this stack as well as feeling confident in learning this myself. Additional skills I learned include using icon libraries, new routing techniques, and hosting. From design to deployment this has been an entirely self-motivated solo project.',
     },
   ])
 
@@ -45,12 +45,46 @@ export default async function () {
   ])
 
   await db.insert(Gallery).values([
-    { portfolioId: 1, image: '/triphive/schedule.png' },
-    { portfolioId: 1, image: '/triphive/profile.png' },
-    { portfolioId: 1, image: '/triphive/events-l.png' },
-    { portfolioId: 1, image: '/triphive/signup.png' },
-    { portfolioId: 2, image: '/hairsalon/services.png' },
-    { portfolioId: 2, image: '/hairsalon/portfolio.png' },
+    {
+      portfolioId: 1,
+      image: '/triphive/schedule.png',
+      alt: 'image of schedule from Triphive website',
+    },
+    {
+      portfolioId: 1,
+      image: '/triphive/profile.png',
+      alt: 'image of profile from Triphive website',
+    },
+    {
+      portfolioId: 1,
+      image: '/triphive/events-l.png',
+      alt: 'image of events from Triphive website',
+    },
+    {
+      portfolioId: 2,
+      image: '/hairsalon/home.png',
+      alt: 'image of home page on hair salon website',
+    },
+    {
+      portfolioId: 2,
+      image: '/hairsalon/services.png',
+      alt: 'image of services from hair salon website',
+    },
+    {
+      portfolioId: 2,
+      image: '/hairsalon/portfolio.png',
+      alt: 'image of portfolio from hair salon website',
+    },
+    {
+      portfolioId: 3,
+      image: '/portfolio/dynamic.png',
+      alt: 'image of code from this portfolio',
+    },
+    {
+      portfolioId: 3,
+      image: '/portfolio/gallery.png',
+      alt: 'image of code from this portfolio',
+    },
   ])
 
   await db.insert(Links).values([
@@ -81,6 +115,13 @@ export default async function () {
       url: 'https://www.youtube.com/watch?v=f6n5flc4xxc',
       image: '',
       logo: 'simple-icons:youtube',
+    },
+    {
+      portfolioId: 3,
+      title: 'Github',
+      url: 'https://github.com/aimee-mcneil-melville/Portfolio',
+      image: '',
+      logo: 'simple-icons:github',
     },
   ])
 }

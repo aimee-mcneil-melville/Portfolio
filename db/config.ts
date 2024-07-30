@@ -23,6 +23,7 @@ const Gallery = defineTable({
   columns: {
     portfolioId: column.number({ references: () => Portfolio.columns.id }),
     image: column.text(),
+    alt: column.text(),
   },
 })
 
