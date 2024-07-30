@@ -14,10 +14,10 @@ const data = await db.select()
 
 <div class="gallery-wrapper">
   <div class="gallery">{data.map((Gallery ) => (
-    <img class="gallery-item" src={Gallery.image}></img>))}
+    <img class="gallery-item" alt={Gallery.alt} src={Gallery.image}></img>))}
   </div>
-  <button class="gallery-control prev"><Icon name="ph:caret-circle-left"></Icon></button>
-  <button class="gallery-control next"><Icon name="ph:caret-circle-right"></Icon></button>
+  <button class="gallery-control prev"><Icon name="ph:caret-circle-left" alt="previous"></Icon></button>
+  <button class="gallery-control next"><Icon name="ph:caret-circle-right" alt="next"></Icon></button>
 </div>
 
 

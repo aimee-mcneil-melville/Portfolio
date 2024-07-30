@@ -3,11 +3,11 @@
 const { id, image, title } = Astro.props;
 
 ---
-<div class="card">
+<div class="card glow-hover">
   <a class="unstyle-a" href={`projects/${id}`}>
     <div id={`project-${id}`}>
      <img src={image} class="card-image"/>
-      <p class="card-name">{title}</p>
+      <h3 class="card-name">{title}</h3>
     </div>
   </a>
 </div>

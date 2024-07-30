@@ -13,11 +13,12 @@ h1 {
   margin-bottom: 1px;
 }
 
-h3 {
+h2 {
   font-size: 2rem;
   font-weight: 400;
   line-height: 1;
   margin-bottom: 1em;
+  color: rgb(var(--accent-bold));
 }
 
 p {
@@ -84,36 +85,28 @@ $neon-colors: (
   
 
 
-  $card-hover-color: rgb(var(--neon-orange));
+  $hover-color: rgb(var(--neon-indigo));
 
-.media-hover {
+.glow-hover {
   &:hover {
-    border-color: $card-hover-color;
-    box-shadow: 0 0 8px 0px $card-hover-color,
-                0 0 16px 2px $card-hover-color;
+    border-color: $hover-color;
+    box-shadow: 0 0 8px 0px  $hover-color,
+                0 0 16px 2px  $hover-color;
     border-width: 0.15rem;
   }
 }
 
 .glow-border {
-    border-color: rgb(var(--neon-indigo));
+    border-color:  $hover-color;
     box-shadow:
-                0 0 6px 0px rgb(var(--neon-indigo)),
-                0 0 2px 0px rgb(var(--neon-indigo));
+                0 0 6px 0px  $hover-color,
+                0 0 2px 0px  $hover-color;
     border-width: 0.15rem;
   }
 
 
 
 /* layout */
-
-.wrapper-20 {
-  gap: 20px;  
-}
-
-.wrapper-50 {
-  gap: 50px;
-}
 
 .flex-center {
   display: flex;
@@ -234,7 +227,7 @@ header {
   font-size: 1.5rem;
   padding: 15px;
   margin: 0;
-  color: rgb(var(--accent-bold));
+  color: rgb(var(--accent-light));
 }
 
 /* buttons */
