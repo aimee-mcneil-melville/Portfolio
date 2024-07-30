@@ -140,7 +140,6 @@ $neon-colors: (
 }
 
 .column-container {
-  max-width: 700px;
   padding: 20px;
   justify-content: center;
 }
@@ -151,6 +150,13 @@ $neon-colors: (
 
 .wrap-container {
   flex-wrap: wrap;
+}
+
+.project-column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 20px;
+  column-gap: 50px;
 }
 
 /* header and nav */
@@ -204,14 +210,16 @@ header {
 /* project cards */
 
 .card {
-  max-width: 650px;
+  max-width: 450px;
   margin-top: 15px;
-  border: 0.2em solid rgb(var(--accent-bold));
-  border-radius: 5px;
-  background: var(--accent-gradient);
   overflow: hidden;
   box-sizing: border-box;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  background: rgba(191, 215, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(191, 215, 255, 0.4);
   }
 
 .card-image {
@@ -222,13 +230,9 @@ header {
   box-sizing: border-box;
 }
 
-.card-content {
-  padding: 15px;
-  width: 60%;
-}
-
 .card-name {
   font-size: 1.5rem;
+  padding: 15px;
   margin: 0;
   color: rgb(var(--accent-bold));
 }
@@ -303,6 +307,14 @@ header {
 
   .nav-toggle {
       display: block;
+  }
+
+}
+
+@media (max-width: 1024px) {
+  .project-column {
+    grid-template-columns: 1fr;
+    column-gap: 0; 
   }
 
 }

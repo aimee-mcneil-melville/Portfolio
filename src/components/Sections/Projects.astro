@@ -1,10 +1,28 @@
 --- 
 
 import Card from '../Card.astro'
+import { db, Portfolio } from 'astro:db';
 
+const data: Portfolio[] = await db.select().from(Portfolio);
+
+
+interface Portfolio {
+id: number
+title: string
+subtitle:  string
+image:  string
+goal:  string
+text: string
+}
 ---
 
 <div id="projects" class="section">
   <h3 class="text-gradient">Projects</h3>
-<Card/>
+  <div class="column-container flex-center">
+  <div class="project-column">
+  {data.map((Portfolio ) =>
+          <Card id={Portfolio.id} image={Portfolio.image} title={Portfolio.title}/>
+    )}
   </div>
+  </div>
+</div>

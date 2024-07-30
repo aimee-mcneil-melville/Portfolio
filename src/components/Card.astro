@@ -1,32 +1,13 @@
 ---
 
-import { db, Portfolio } from 'astro:db';
-import TechList from './TechList.astro';
-
-const data: Portfolio[] = await db.select().from(Portfolio);
-
-
-interface Portfolio {
-id: number
-title: string
-subtitle:  string
-image:  string
-goal:  string
-text: string
-}
+const { id, image, title } = Astro.props;
 
 ---
-
-<div class="wrap-container text-light">
-{data.map((Portfolio ) =>
-<a class="unstyle-a flex-center" href={`projects/${Portfolio.id}`}>
-  <div id={`project-${Portfolio.id}`} class="card media-hover"> 
-  <img src={Portfolio.image} class="card-image"/>
-    <div class="card-content">
-      <p class="card-name">{Portfolio.title}</p>
-      {/* <TechList portfolioId={Portfolio.id} /> */}
+<div class="card">
+  <a class="unstyle-a" href={`projects/${id}`}>
+    <div id={`project-${id}`}>
+     <img src={image} class="card-image"/>
+      <p class="card-name">{title}</p>
     </div>
-  </div>
   </a>
-)}
 </div>
