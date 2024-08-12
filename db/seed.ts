@@ -7,41 +7,49 @@ export default async function () {
       subtitle:
         "My team's final group project at Dev Academy. We continue to expand and add new features.",
       image: '/triphive/triphive-logo.png',
-      goal: 'An application that can be used by members of the project team and eventually marketed to the public.',
-      text: 'Going on a trip in a group? Trip Hive will keep everyone in the loop! The idea for Trip Hive came about from some personal experiences within my final project group. The concept is a travel companion app for a group of people, so that everyone has access to information and is accountable and responsible for their time. Groups of friends, families, bands, and corporate travel are just some of the use cases for this app.',
+      goal: 'Going on a trip in a group? Trip Hive will keep everyone in the loop!',
+      text: 'The idea for Trip Hive came about from some personal experiences within my final project group. Currently web application that can be used by members of the project team, it is planned to be a downloadable app marketed to the public. User story: a travel companion app for a group of people, so that everyone has access to information and is accountable and responsible for their time. Groups of friends, families, bands, and corporate travel are just some of the use cases for this app.',
     },
     {
       title: 'Hair Salon Website',
       subtitle: 'A team project to build a new website for a hair salon.',
       image: '/hairsalon/home.png',
       goal: 'A project to learn new technologies and simulate a real-world scenario.',
-      text: "I was invited in to this personal project by a member of my cohort. We created a website for a hair salon, and learned new technology in the process. We chose to learn Astro due to it's speed, flexibility, and server-side rendering.",
+      text: "I was invited in to this personal project by a member of my cohort. We created a website for a hair salon, and learned new technology in the process. We chose to learn Astro due to it's speed, flexibility, and server-side rendering. This project involved planning and collaboration, teaching and learning from each other.",
     },
     {
       title: 'My Portfolio',
       subtitle:
-        "This very website! I wanted to create a site where people can see what I'm all about.",
-      image: '/image3.jpg',
+        "This very website! I wanted to create a place where people can see what I'm all about.",
+      image: '/portfolio/saimee.png',
       goal: '',
-      text: 'For this project I decided to use Astro for a second time - this time including Astro DB. Throughout this project I have gained more knowledge on this stack as well as feeling confident in learning this myself. Additional skills I learned include using icon libraries, new routing techniques, and hosting. From design to deployment this has been an entirely self-motivated solo project.',
+      text: 'For this project I decided to use Astro for a second time - this time including Astro DB. Throughout this project I have gained more knowledge on this stack as well as feeling confident in learning new tech by myself. Additional skills I learned include using icon libraries, Sass, new routing techniques, and hosting. From design to deployment this has been an entirely self-motivated solo project.',
     },
   ])
 
   await db.insert(Tech).values([
     { portfolioId: 1, name: 'React', icon: 'simple-icons:react' },
-    { portfolioId: 1, name: 'Typescript', icon: 'simple-icons:typescript' },
-    { portfolioId: 1, name: 'Vite Testing', icon: 'simple-icons:vitest' },
-    { portfolioId: 1, name: 'Knex', icon: 'simple-icons:knexdotjs' },
-    { portfolioId: 1, name: 'SqLite3', icon: 'simple-icons:sqlite' },
     { portfolioId: 1, name: 'Bulma', icon: 'simple-icons:bulma' },
+    { portfolioId: 1, name: 'Typescript', icon: 'simple-icons:typescript' },
+    { portfolioId: 1, name: 'SqLite3', icon: 'simple-icons:sqlite' },
+    { portfolioId: 1, name: 'Javascript', icon: 'simple-icons:javascript' },
+    { portfolioId: 1, name: 'Knex', icon: 'simple-icons:knexdotjs' },
+    { portfolioId: 1, name: 'Vite Testing', icon: 'simple-icons:vitest' },
     { portfolioId: 1, name: 'Github Projects', icon: 'simple-icons:github' },
+    { portfolioId: 1, name: 'NPM Packages', icon: 'simple-icons:npm' },
+    { portfolioId: 1, name: 'VSCode', icon: 'simple-icons:visualstudiocode' },
     { portfolioId: 2, name: 'Astro', icon: 'simple-icons:astro' },
-    { portfolioId: 2, name: 'Typescript', icon: 'simple-icons:typescript' },
+    { portfolioId: 2, name: 'VSCode', icon: 'simple-icons:visualstudiocode' },
+    { portfolioId: 2, name: 'Javascript', icon: 'simple-icons:javascript' },
     { portfolioId: 2, name: 'Tailwind', icon: 'simple-icons:tailwindcss' },
+    { portfolioId: 2, name: 'Typescript', icon: 'simple-icons:typescript' },
     { portfolioId: 2, name: 'Github Projects', icon: 'simple-icons:github' },
     { portfolioId: 3, name: 'Astro || Astro DB', icon: 'simple-icons:astro' },
+    { portfolioId: 3, name: 'NPM Packages', icon: 'simple-icons:npm' },
     { portfolioId: 3, name: 'Typescript', icon: 'simple-icons:typescript' },
     { portfolioId: 3, name: 'Sass', icon: 'simple-icons:sass' },
+    { portfolioId: 3, name: 'Javascript', icon: 'simple-icons:javascript' },
+    { portfolioId: 3, name: 'VSCode', icon: 'simple-icons:visualstudiocode' },
   ])
 
   await db.insert(Gallery).values([
@@ -82,7 +90,7 @@ export default async function () {
     },
     {
       portfolioId: 3,
-      image: '/portfolio/gallery.png',
+      image: '/portfolio/database.png',
       alt: 'image of code from this portfolio',
     },
   ])
