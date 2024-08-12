@@ -14,14 +14,14 @@ export default async function () {
       title: 'Hair Salon Website',
       subtitle: 'A team project to build a new website for a hair salon.',
       image: '/hairsalon/home.png',
-      goal: 'A project to learn new technologies and simulate a real-world scenario.',
+      goal: 'We wanted to learn new technologies and simulate a real-world scenario.',
       text: "I was invited in to this personal project by a member of my cohort. We created a website for a hair salon, and learned new technology in the process. We chose to learn Astro due to it's speed, flexibility, and server-side rendering. This project involved planning and collaboration, teaching and learning from each other.",
     },
     {
       title: 'My Portfolio',
       subtitle:
         "This very website! I wanted to create a place where people can see what I'm all about.",
-      image: '/portfolio/saimee.png',
+      image: '/portfolio/aimee.png',
       goal: '',
       text: 'For this project I decided to use Astro for a second time - this time including Astro DB. Throughout this project I have gained more knowledge on this stack as well as feeling confident in learning new tech by myself. Additional skills I learned include using icon libraries, Sass, new routing techniques, and hosting. From design to deployment this has been an entirely self-motivated solo project.',
     },
