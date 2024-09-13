@@ -255,6 +255,21 @@ header {
 }
 
 
+/* image */
+.avatar {
+  max-width: 20rem;
+  object-fit: contain;
+  border-radius: 50%;
+  border: rgb(var(--accent-light))
+  // box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2px;
+}
+
 
 /* media queries */
 
