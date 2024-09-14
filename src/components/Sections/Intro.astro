@@ -1,11 +1,16 @@
 ---
+import Avatar from "../Avatar.astro";
+import IntroText from "../IntroText.astro";
+
 
 ---
 
 <div id="intro" class="text-light section">
   <h1 class="text-gradient">McNeil-Melville</h1>
-<p class="text-bold">Full Stack Web Developer</p>
-<p >Kia Ora, I'm Aimee</p>
-<p class="text-accent">I'm a web developer interested in the SRE path, based in Auckland Aotearoa.</p>
-<p>Have a look around my portfolio, I am currently working on new projects to add so watch this space! If you are interested in my work please get in touch - I am looking for connections and employment.</p> 
+  <div class="column-container">
+  <div class="column-grow">
+    <Avatar/>
+    <IntroText/>
+</div>
+</div>
 </div>

@@ -85,24 +85,39 @@ $neon-colors: (
   
 
 
-  $hover-color: rgb(var(--neon-indigo));
+@mixin glow($color) {
+  box-shadow:
+    0 0 6px 0px $color,
+    0 0 2px 0px $color;
+  border-color: $color;
+  border-width: 0.15rem;
+}
 
-.glow-hover {
+@mixin glow-hover($color) {
   &:hover {
-    border-color: $hover-color;
-    box-shadow: 0 0 8px 0px  $hover-color,
-                0 0 16px 2px  $hover-color;
+    box-shadow:
+      0 0 8px 0px $color,
+      0 0 16px 2px $color;
+    border-color: $color;
     border-width: 0.15rem;
   }
 }
 
+$default-color: rgb(var(--neon-indigo));
+$avatar-color: rgb(var(--neon-pink));
+
+.glow-hover {
+  @include glow-hover($default-color);
+}
+
 .glow-border {
-    border-color:  $hover-color;
-    box-shadow:
-                0 0 6px 0px  $hover-color,
-                0 0 2px 0px  $hover-color;
-    border-width: 0.15rem;
-  }
+  @include glow($default-color);
+}
+
+.glow-avatar {
+  @include glow($avatar-color);
+  @include glow-hover($avatar-color);
+}
 
 
 
@@ -130,6 +145,14 @@ $neon-colors: (
   grid-template-columns: repeat(2, minmax(200px, 1fr));
   row-gap: 20px;
   column-gap: 75px;
+}
+
+.column-grow {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  row-gap: 20px;
+  column-gap: 50px;
+  align-items: center; 
 }
 
 .column-container {
@@ -254,6 +277,38 @@ header {
   padding: 10px; 
 }
 
+
+/* image */
+.avatar {
+  position: absolute; 
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%; 
+  height: 95%; 
+  object-fit: cover; 
+  border-radius: 50%; 
+  background-color: rgb(var(--accent-dark));
+  border: 3px solid rgb(var(--neon-yellow));
+  border-right: none;
+}
+
+.avatar-container {
+  width: 15rem; 
+  height: 15rem;
+  position: relative; 
+  margin: 3rem; 
+}
+
+.avatar-border {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgb(var(--neon-pink));
+ 
+  // box-sizing: border-box;
+}
 
 
 /* media queries */
