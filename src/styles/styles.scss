@@ -132,6 +132,14 @@ $neon-colors: (
   column-gap: 75px;
 }
 
+.column-grow {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  row-gap: 20px;
+  column-gap: 50px;
+  align-items: center; 
+}
+
 .column-container {
   padding: 20px;
   justify-content: center;
@@ -272,7 +280,7 @@ header {
   width: 15rem; 
   height: 15rem;
   position: relative; 
-  margin: 1rem; 
+  margin: 3rem; 
 }
 
 .avatar-border {
