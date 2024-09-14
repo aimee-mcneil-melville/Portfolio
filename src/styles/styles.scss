@@ -85,24 +85,39 @@ $neon-colors: (
   
 
 
-  $hover-color: rgb(var(--neon-indigo));
+@mixin glow($color) {
+  box-shadow:
+    0 0 6px 0px $color,
+    0 0 2px 0px $color;
+  border-color: $color;
+  border-width: 0.15rem;
+}
 
-.glow-hover {
+@mixin glow-hover($color) {
   &:hover {
-    border-color: $hover-color;
-    box-shadow: 0 0 8px 0px  $hover-color,
-                0 0 16px 2px  $hover-color;
+    box-shadow:
+      0 0 8px 0px $color,
+      0 0 16px 2px $color;
+    border-color: $color;
     border-width: 0.15rem;
   }
 }
 
+$default-color: rgb(var(--neon-indigo));
+$avatar-color: rgb(var(--neon-pink));
+
+.glow-hover {
+  @include glow-hover($default-color);
+}
+
 .glow-border {
-    border-color:  $hover-color;
-    box-shadow:
-                0 0 6px 0px  $hover-color,
-                0 0 2px 0px  $hover-color;
-    border-width: 0.15rem;
-  }
+  @include glow($default-color);
+}
+
+.glow-avatar {
+  @include glow($avatar-color);
+  @include glow-hover($avatar-color);
+}
 
 
 
@@ -274,6 +289,8 @@ header {
   object-fit: cover; 
   border-radius: 50%; 
   background-color: rgb(var(--accent-dark));
+  border: 3px solid rgb(var(--neon-yellow));
+  border-right: none;
 }
 
 .avatar-container {
@@ -289,7 +306,8 @@ header {
   height: 100%;
   border-radius: 50%;
   background-color: rgb(var(--neon-pink));
-  box-sizing: border-box;
+ 
+  // box-sizing: border-box;
 }
 
 
