@@ -294,9 +294,9 @@ header {
 }
 
 .avatar-container {
-  width: 15rem; 
-  height: 15rem;
-  position: relative; 
+width: 200px;
+height: 200px;
+position: relative; 
   margin: 3rem; 
 }
 
@@ -361,6 +361,11 @@ header {
 
   .nav-toggle {
       display: block;
+  }
+
+  .column-grow {
+    grid-template-columns: 1fr;
+    column-gap: 0; 
   }
 
 }
