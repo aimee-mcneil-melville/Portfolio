@@ -9,6 +9,42 @@ body {
   margin: 0;
 }
 
+.gradient-box{
+background-image: var(--bg-gradient);
+z-index: 1;
+height: 12rem;
+margin-bottom: 5%;
+}
+
+.img-wrapper {
+  height: 100%;
+  transform-style: preserve-3d;
+  z-index: -1;
+}
+
+header {
+height: 100vh; 
+overflow-y: scroll;
+overflow-x: hidden;
+perspective: 10px;
+}
+
+.background {
+  transform: translateZ(-10px) scale(2);
+}
+.foreground {
+  transform: translateZ(-5px) scale(1.5);
+  padding-top: 15rem;
+}
+
+.background,
+.foreground {
+position: absolute;
+height: 100%;
+width: 100%;
+object-fit: cover;
+}
+
 h1 {
   font-size: 3rem;
   font-weight: 600;
@@ -167,14 +203,6 @@ section {
   min-height: 100vh;
 }
 
-// #about.section {
-//   background-color: rgb(var(--accent-light));
-// }
-
-#projects.section {
-  background-color: rgb(var(--accent-light));
-}
-
 footer {
   width: 100%;
   height: auto
@@ -193,7 +221,7 @@ footer {
 
 /* header and nav */
   
-header {
+nav {
   position: fixed;
   top: 0;
   width: 100%;
