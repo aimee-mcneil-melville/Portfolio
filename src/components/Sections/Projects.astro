@@ -15,14 +15,15 @@ goal:  string
 text: string
 }
 ---
-
-<div id="projects" class="section">
-  <h2 class="text-dark">Projects</h2>
-  <div class="column-container flex-center">
-  <div class="project-column">
-  {data.map((Portfolio ) =>
-          <Card id={Portfolio.id} image={Portfolio.image} title={Portfolio.title}/>
-    )}
+<section  id="projects" class="flex-center">
+  <div>
+    <h2 class="text-dark">Projects</h2>
+    <div class="column-container flex-center">
+    <div class="project-column">
+    {data.map((Portfolio ) =>
+            <Card id={Portfolio.id} image={Portfolio.image} title={Portfolio.title}/>
+      )}
+    </div>
+    </div>
   </div>
-  </div>
-</div>
+</section>

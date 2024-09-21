@@ -1,6 +1,8 @@
 main {
   margin: auto;
   line-height: 1.6;
+  width: 85%;
+  max-width: calc(100% - 2rem);
 }
 
 body {
@@ -160,7 +162,7 @@ $avatar-color: rgb(var(--neon-pink));
   justify-content: center;
 }
 
-.section {
+section {
   padding-top: 110px;
   min-height: 100vh;
 }
