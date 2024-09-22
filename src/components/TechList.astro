@@ -1,38 +1,42 @@
 ---
-
-import { db, eq, Tech } from 'astro:db';
+import { db, eq, Tech } from 'astro:db'
 import { Icon } from 'astro-icon/components'
+import skillsData from '../../data.json'
 
 const { portfolioId } = Astro.props
 
-const data = await db.select()
+const data = await db
+  .select()
   .from(Tech)
-  .where(eq(Tech.portfolioId, portfolioId));
+  .where(eq(Tech.portfolioId, portfolioId))
 
+const matchedSkills = data.map((skill) => {
+  const matchedIcon = skillsData.find(
+    (icon: { icon: string }) => icon.icon === skill.icon
+  )
+  return {
+    ...skill,
+    color: matchedIcon ? matchedIcon.color : null,
+  }
+})
 ---
 
-<div class="column-container spacing">
-  <p class="text-bold">Tech Skills</p> 
-<ul class="text-light column-double">{data.map((Tech ) => (
-  <li class="item-list flex-center glow-border"> <Icon name={Tech.icon}/> {Tech.name} </li>
-  ))}
-</ul>
+<div>
+  <p class="text-bold">Tech Skills</p>
+  <ul class="skill-list">
+    {
+      matchedSkills.map((skill) => (
+        <li
+          class={`flex-center text-light skill-item skill-item--${skill.color}`}
+        >
+          <Icon class={`icon icon--${skill.color}`} name={skill.icon} />
+          {skill.name}
+        </li>
+      ))
+    }
+  </ul>
 </div>
 
 <style>
-
-.text-bold {
-  text-align: center;
-}
-.align {
-  display: grid;
-  align-items: center
-}
-
-
-.spacing {
-  margin-right: 150px;
-}
-
 
 </style>
