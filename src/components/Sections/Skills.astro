@@ -4,16 +4,16 @@ import { Icon } from 'astro-icon/components'
 import skills from '../../../data.json'
 
 ---
-<section id="skills" class="">
+<section id="skills" class="flex-center">
 <div>
 <h2>My Skills</h2>
-</div>
 <ul class=" skill-list">
-
+  
   {skills.map((skill) => 
 <li
 class={`flex-center text-light skill-item skill-item--${skill.color}`}><Icon class={`icon icon--${skill.color}`} name={skill.icon}/>{skill.skill}</li>
 )}
 
 </ul>
+</div>
 </section>

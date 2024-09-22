@@ -4,21 +4,25 @@ import { Icon } from "astro-icon/components";
 const { href, icon, name } = Astro.props;
 ---
 
-<div>
-<a href={href} target="_blank" class="unstyle-a">
-  <button class="item-list link-button glow-border flex-center"> <Icon name={icon}/>{name}</button>
+
+<a href={href} target="_blank" class="unstyle-a  flex-center">
+  <button class=" link-button link-hover flex-center"> <Icon name={icon}/>{name}</button>
 </a>
-</div>
+
 
 <style>
 [data-icon] {
     font-size: 1.5rem;
-    margin-right: 1rem;
 }
 
 [data-icon="ph:envelope"] {
   font-size: 2rem;
-  color: rgb(var(--accent-bold))
+  color: rgb(var(--accent-bold));
+  margin-right: 10px;
+}
+
+[data-icon="simple-icons:github"] {
+  color: rgb(var(--neon-pink));
 }
 
 </style>

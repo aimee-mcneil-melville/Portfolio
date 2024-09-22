@@ -207,7 +207,8 @@ section {
 
 footer {
   width: 100%;
-  height: auto
+  height: auto;
+  margin: 20px 0
 }
 
 .wrap-container {
@@ -298,12 +299,14 @@ nav {
   background-color: rgb(var(--background));
   color: rgb(var(--accent-light));
   font-size: 1rem;
-  min-width: 150px;
+  border: none;
+  font-weight: bold;
+  padding: 0 20px; 
 
-&:hover {
-  color: rgb(var(--accent-light));
-  background-color: rgb(var(--accent-dark));
 }
+
+.link-hover {
+  @include glow-hover($default-color);
 }
 
 /* list */
