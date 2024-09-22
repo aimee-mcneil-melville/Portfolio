@@ -128,7 +128,7 @@ $neon-colors: (
 @mixin glow($color) {
   box-shadow:
     0 0 6px 0px $color,
-    0 0 2px 0px $color;
+    0 0 2px 1px $color;
   border-color: $color;
   border-width: 0.15rem;
 }
@@ -321,6 +321,36 @@ nav {
   font-weight: bold;
   gap: 8px;
   padding: 10px; 
+}
+
+.skill-list{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  @each $key, $color in $neon-colors {
+    .skill-item--#{$key} {
+        @include glow($color);
+    }
+  }
+}
+
+.skill-item{           
+  flex-direction: column;      
+  border-radius: 8px;
+  padding: 5px;
+  flex: 1 0 auto;    
+  background-color: rgb(var(--accent-light)) 0.5;
+}
+
+ .icon {
+      margin-bottom: 5px;
+      
+      @each $key, $color in $neon-colors {
+          &--#{$key} {
+      color: $color;
+    }
+  }
 }
 
 

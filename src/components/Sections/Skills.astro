@@ -1,47 +1,19 @@
 ---
 
 import { Icon } from 'astro-icon/components'
+import skills from '../../../data.json'
 
 ---
+<section id="skills" class="">
+<div>
+<h2>My Skills</h2>
+</div>
+<ul class=" skill-list">
 
-  <section id="skills" class="flex-center">
-    <div >
-<h2>Skills</h2>
-<div class="flex-start wrap-container">
-  <div class="column-container">
-    <p class="text-bold">Tech Skills</p>
-  <ul class="column-double text-light">
-    <li> <Icon name='simple-icons:react'/> React.js</li>
-    <li> <Icon name='simple-icons:tailwindcss'/> Tailwind</li> 
-    <li> <Icon name='simple-icons:typescript'/> Typescript</li>
-    <li> <Icon name='simple-icons:sqlite'/> SQLite3</li>
-    <li> <Icon name='simple-icons:visualstudiocode'/> VSCode</li> 
-    <li> <Icon name='simple-icons:claris'/> FileMaker</li> 
-    <li> <Icon name='simple-icons:vitest'/> Vite Testing</li> 
-    <li> <Icon name= 'simple-icons:bulma'/> Bulma</li>
-    <li> <Icon name='simple-icons:javascript'/> Javascript</li> 
-    <li> <Icon name='simple-icons:github'/> GitHub</li> 
-    <li> <Icon name='simple-icons:knexdotjs'/> Knex.js</li> 
-    <li> <Icon name='simple-icons:npm'/> NPM Packages</li> 
-    <li> <Icon name='simple-icons:auth0'/> Auth0</li> 
-    <li> <Icon name='simple-icons:express'/> Express Server</li> 
-    <li> <Icon name='simple-icons:astro'/> Astro</li> 
-    <li> <Icon name='simple-icons:sass'/> Sass</li> 
+  {skills.map((skill) => 
+<li
+class={`flex-center text-light skill-item skill-item--${skill.color}`}><Icon class={`icon icon--${skill.color}`} name={skill.icon}/>{skill.skill}</li>
+)}
+
 </ul>
-</div>
-<div class="column-container">
-<p class="text-bold">Soft Skills</p>
-<ul class="column-single text-light">
-    <li> <Icon name='ph:lightbulb-filament'/> Problem Solving</li>
-    <li> <Icon name='ph:users-three'/> Team Leadership</li> 
-    <li> <Icon name='ph:magnifying-glass-bold'/> Analysis</li> 
-    <li> <Icon name='ph:chats-circle-fill'/> Communication</li>
-    <li> <Icon name='ph:microphone-stage'/> Public Speaking</li> 
-    <li> <Icon name='ph:puzzle-piece'/> Critical Thinking</li> 
-    <li> <Icon name='ph:wrench-bold'/> Troubleshooting</li> 
-    <li> <Icon name='ph:hand-heart'/> Emotional Intelligence</li> 
-</ul>
-</div>
-</div>
-</div>
 </section>
