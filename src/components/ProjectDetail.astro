@@ -12,18 +12,18 @@ const data = await db.select()
 
 ---
 
-<div class="text-light section">
+<section class="flex-center ">
   {data.map((Portfolio ) =>
-    <div>
-    <Gallery portfolioId={Portfolio.id} />
-    </div>
+    <div class="text-light project-wrapper">
       <h1 class="text-gradient">{Portfolio.title}</h1>
+      <LinkButton portfolioId={Portfolio.id} />
         <p class="text-bold">{Portfolio.subtitle}</p>
         <p>{Portfolio.goal}</p>
         <p>{Portfolio.text}</p>
-        <div class="flex-start wrap-container">
+        <div class="">
         <TechList portfolioId={Portfolio.id} />
-        <LinkButton portfolioId={Portfolio.id} />
+        </div>
         </div>
   )}
-  </div>
+  </section>
+

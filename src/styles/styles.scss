@@ -51,7 +51,6 @@ h1 {
   font-size: 3rem;
   font-weight: 600;
   line-height: 1;
-  margin: 0;
 }
 
 h2 {
@@ -233,7 +232,7 @@ nav {
 
 .name {
   position: absolute;
-  top: 5rem;
+  top: 3rem;
   left: 3rem
   }
 
@@ -301,12 +300,14 @@ nav {
   font-size: 1rem;
   border: none;
   font-weight: bold;
-  padding: 0 20px; 
-
 }
 
 .link-hover {
   @include glow-hover($default-color);
+}
+
+.gap {
+  gap: 20px; 
 }
 
 /* list */
@@ -349,6 +350,10 @@ nav {
   }
 }
 
+.project-wrapper {
+  display: flex;
+  flex-direction: column;
+}
 
 /* image */
 .avatar {

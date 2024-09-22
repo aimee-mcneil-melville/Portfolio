@@ -3,6 +3,9 @@ import { db, Portfolio } from 'astro:db';
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import ProjectDetail from '../../components/ProjectDetail.astro';
+import NavBar from '../../components/NavBar.astro';
+import Contact from '../../components/Sections/Contact.astro';
+import ImageGallery from '../../components/ImageGallery.astro';
 
 
 export async function getStaticPaths() {
@@ -17,8 +20,10 @@ const id: number = parseInt(Astro.params.id, 10);
 
 ---
 <Layout title="Projects">
+  <NavBar/>
   <main>
-    <Header/>
+    <ImageGallery id={id} />
     <ProjectDetail id={id}/>
+    <Contact/>
   <main/>
 </Layout>
