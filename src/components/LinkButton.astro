@@ -11,14 +11,27 @@ const data = await db.select()
 
 ---
 
-
-    <div class="column-container">
-      <p class="text-bold">Want to know more?</p>
-<div class="text-light column-single">{data.map((link) => (
+<div class="text-light flex-start wrap-container gap">{data.map((link) => (
       <a href={link.url} target="_blank" class="unstyle-a">
-        <div class="item-list flex-center link-button glow-border"> <Icon name= {link.logo}/> {link.title}</div>
+        <div class="flex-center link-button link-hover"> <Icon name= {link.logo}/> {link.title}</div>
       </a>
       ))}
   </div>
-</div>
+
+  <style>
+    [data-icon] {
+        font-size: 2.5rem;
+        margin-right: 10px;
+    }
+    
+    [data-icon="simple-icons:github"] {
+      color: rgb(var(--neon-pink));
+    }
+    [data-icon="simple-icons:youtube"] {
+      color: rgb(var(--neon-pink));
+    }
+    </style>
+
+
+
 

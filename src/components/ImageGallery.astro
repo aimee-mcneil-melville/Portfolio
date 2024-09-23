@@ -3,67 +3,84 @@
 import Icon from 'astro-iconify';
 import { db, eq, Gallery } from 'astro:db';
 
-const { portfolioId } = Astro.props
+const { id } = Astro.props
 
 const data = await db.select()
   .from(Gallery)
-  .where(eq(Gallery.portfolioId, portfolioId));
+  .where(eq(Gallery.portfolioId, id));
 
  
 ---
 
 <div class="gallery-wrapper">
-  <div class="gallery">{data.map((Gallery ) => (
-    <img class="gallery-item" alt={Gallery.alt} src={Gallery.image}></img>))}
+  <div class="gallery">{data.map((Gallery) => (
+      <img class="gallery-item" alt={Gallery.alt} src={Gallery.image} />))}
   </div>
-  <button class="gallery-control prev"><Icon name="ph:caret-circle-left" alt="previous"></Icon></button>
-  <button class="gallery-control next"><Icon name="ph:caret-circle-right" alt="next"></Icon></button>
+  <div class="gallery-controls">
+    <button class="control-icon prev"><Icon name="ph:caret-circle-left" alt="previous" /></button>
+    <button class="control-icon next"><Icon name="ph:caret-circle-right" alt="next" /></button>
+  </div>
 </div>
 
 
 <style>
   .gallery-wrapper {
-    position: relative;
-    top: 3em;
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    overflow: hidden;
-    margin-bottom: 100px;
-  }
+  position: relative;
+  top: 3em;
+  margin: 50px 0;
+  max-width: 1200px;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
   
   .gallery {
-    display: flex;
-    transition: transform 0.8s ease-in-out;
-  }
-  
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
   .gallery-item {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
   
-  .gallery-control {
-    position: absolute;
-    top: 50%;
-    width: 3em;
-    height: 3rem;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: rgb(var(--accent-light));
-    border: none;
-    cursor: pointer;
-    font-size: 1em;
-    transform: translateY(-50%);
-    z-index: 1000;
-  }
+  .gallery-controls {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
 
-  .prev {
-    left: 1em;
-  }
+.control-icon {
+  width: 3em;
+  height: 3rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(var(--accent-light));
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 0 1em;
+}
 
-    .next {
-    right: 1em;
-  }
+@media (max-width: 600px) {
+    .gallery-item {
+      width: 100%; 
+        height: 85vw;
+      }
+
+      .gallery-controls {
+    position: static; 
+    margin-top: 2em;
+    justify-content: center;
+  }     
+}
   
 </style>
 

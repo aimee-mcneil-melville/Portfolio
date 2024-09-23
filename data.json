@@ -1,32 +1,31 @@
-{
-  "Projects": [
-    {
-      "name": "Trip Hive",
-      "subtitle": "My team's final group project at Dev Academy. We continue to add new features.",
-      "goal": "Create an application that can be used by members of the group and eventually marketed to the public.",
-      "image": "/image1.jpeg",
-      "tech": ["react", "typescript", "knex", "sqlite3", "bulma"]
-    },
-    {
-      "name": "Hair Salon Website",
-      "subtitle": "A team project to build a new website for a hair salon.",
-      "goal": "A project to learn new technologies and simulate a real-world scenario.",
-      "image": "/image2.jpg",
-      "tech": ["astro", "astrodb", "typescript", "tailwind"]
-    },
-    {
-      "name": "Snap Snap",
-      "subtitle": "A solo project focused on state management and REST APIs.",
-      "goal": "A project I wanted to create earlier in Dev Academy, now with extra features and full stack. Hopefully a bit of fun for anyone who sees it!",
-      "image": "/image3.jpg",
-      "tech": ["react", "typescript", "knex", "sqlite3"]
-    },
-    {
-      "name": "My Portfolio",
-      "subtitle": "This very website! I wanted to create a site where people can see what I'm all about.",
-      "goal": "",
-      "image": "/image4.webp",
-      "tech": ["astro", "typescript", "sass"]
-    }
-  ]
-}
+[
+  { "skill": "React.js", "icon": "simple-icons:react", "color": "indigo" },
+  { "skill": "Tailwind", "icon": "simple-icons:tailwindcss", "color": "indigo" },
+  { "skill": "Problem Solving", "icon": "ph:lightbulb-filament", "color": "indigo" },
+  { "skill": "Team Leadership", "icon": "ph:users-three", "color": "indigo" },
+  
+  { "skill": "Typescript", "icon": "simple-icons:typescript", "color": "blue" },
+  { "skill": "SQLite3", "icon": "simple-icons:sqlite", "color": "blue" },
+  { "skill": "VSCode", "icon": "simple-icons:visualstudiocode", "color": "blue" },
+  { "skill": "FileMaker", "icon": "simple-icons:claris", "color": "blue" },
+  
+  { "skill": "Vite Testing", "icon": "simple-icons:vitest", "color": "green" },
+  { "skill": "Bulma", "icon": "simple-icons:bulma", "color": "green" },
+  { "skill": "Communication", "icon": "ph:chats-circle-fill", "color": "green" },
+  { "skill": "Analysis", "icon": "ph:magnifying-glass-bold", "color": "green" },
+  
+  { "skill": "Javascript", "icon": "simple-icons:javascript", "color": "yellow" },
+  { "skill": "GitHub", "icon": "simple-icons:github", "color": "yellow" },
+  { "skill": "Express Server", "icon": "simple-icons:express", "color": "yellow" },
+  { "skill": "Public Speaking", "icon": "ph:microphone-stage", "color": "yellow" },
+  
+  { "skill": "Knex.js", "icon": "simple-icons:knexdotjs", "color": "orange" },
+  { "skill": "NPM Packages", "icon": "simple-icons:npm", "color": "orange" },
+  { "skill": "Auth0", "icon": "simple-icons:auth0", "color": "orange" },
+  { "skill": "Critical Thinking", "icon": "ph:puzzle-piece", "color": "orange" },
+  
+  { "skill": "Astro", "icon": "simple-icons:astro", "color": "pink" },
+  { "skill": "Sass", "icon": "simple-icons:sass", "color": "pink" },
+  { "skill": "Emotional Intelligence", "icon": "ph:hand-heart", "color": "pink" },
+  { "skill": "Troubleshooting", "icon": "ph:wrench-bold", "color": "pink" }
+]

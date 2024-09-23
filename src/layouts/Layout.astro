@@ -33,6 +33,10 @@ const { title } = Astro.props;
 			rgb(var(--accent)) 30%,
 			white 70%
 		);
+    --bg-gradient: linear-gradient(
+      black,
+      rgb(var(--background)) 70%
+		);
 
 --neon-indigo: 71, 10, 255;
 --neon-blue: 51, 153, 255;
@@ -64,22 +68,4 @@ const { title } = Astro.props;
   font-size: 1.5rem;
 }
 
-[data-icon="simple-icons:react"], [data-icon="simple-icons:tailwindcss"], [data-icon="ph:lightbulb-filament"] {
-color: rgb(var(--neon-indigo))
-}
-[data-icon="simple-icons:sqlite"], [data-icon="simple-icons:typescript"], [data-icon="simple-icons:visualstudiocode"], [data-icon="simple-icons:claris"], [data-icon="ph:users-three"], [data-icon="ph:magnifying-glass-bold"] {
-  color: rgb(var(--neon-blue))
-}
-[data-icon="simple-icons:vitest"], [data-icon="simple-icons:bulma"], [data-icon="ph:chats-circle-fill"] {
-  color: rgb(var(--neon-green))
-}
-[data-icon="simple-icons:javascript"], [data-icon="simple-icons:github"], [data-icon="ph:microphone-stage"] {
-  color: rgb(var(--neon-yellow))
-}
-[data-icon="simple-icons:knexdotjs"], [data-icon="simple-icons:npm"], [data-icon="simple-icons:express"], [data-icon="simple-icons:auth0"], [data-icon="ph:wrench-bold"], [data-icon="ph:puzzle-piece"] {
-color: rgb(var(--neon-orange))
-}
-[data-icon="simple-icons:astro"], [data-icon="simple-icons:sass"], [data-icon="ph:hand-heart"] {
-  color: rgb(var(--neon-pink))
-}
 </style>
