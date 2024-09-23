@@ -200,8 +200,13 @@ $avatar-color: rgb(var(--neon-pink));
 }
 
 section {
-  // padding-top: 110px;
   min-height: 100vh;
+}
+
+.project-section {
+  height: auto;
+  width: 100%;
+  margin: 4rem 0;
 }
 
 footer {

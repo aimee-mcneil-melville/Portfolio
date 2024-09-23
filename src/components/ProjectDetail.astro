@@ -12,7 +12,7 @@ const data = await db.select()
 
 ---
 
-<section class="flex-center ">
+<div class="project-section flex-center">
   {data.map((Portfolio ) =>
     <div class="text-light project-wrapper">
       <h1 class="text-gradient">{Portfolio.title}</h1>
@@ -25,5 +25,5 @@ const data = await db.select()
         </div>
         </div>
   )}
-  </section>
+  </div>
 
