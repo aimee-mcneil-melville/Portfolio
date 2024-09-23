@@ -122,8 +122,6 @@ $neon-colors: (
   "pink": rgb(var(--neon-pink)),
 );
   
-
-
 @mixin glow($color) {
   box-shadow:
     0 0 6px 0px $color,
@@ -158,8 +156,6 @@ $avatar-color: rgb(var(--neon-pink));
   @include glow-hover($avatar-color);
 }
 
-
-
 /* layout */
 
 .flex-center {
@@ -174,29 +170,12 @@ $avatar-color: rgb(var(--neon-pink));
   align-items: start;
 }
 
-.column-single {
- display: grid;
-  gap: 20px;
-}
-
-.column-double {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(200px, 1fr));
-  row-gap: 20px;
-  column-gap: 75px;
-}
-
 .column-grow {
   display: grid;
   grid-template-columns: auto 1fr;
   row-gap: 20px;
   column-gap: 50px;
   align-items: center; 
-}
-
-.column-container {
-  padding: 20px;
-  justify-content: center;
 }
 
 section {
@@ -317,14 +296,6 @@ nav {
 
 /* list */
 
-.item-list {
-  margin: 0;
-  border-radius: 15px;
-  font-weight: bold;
-  gap: 8px;
-  padding: 10px; 
-}
-
 .skill-list{
   display: flex;
   flex-wrap: wrap;
@@ -406,14 +377,6 @@ margin: 3rem;
     }
   }
 }
-
-@media (max-width: 500px) {
-  
-  .column-double {
-    grid-template-columns: 1fr;
-    column-gap: 0; 
-  }
-  }
   
   @media (max-width: 768px) {
 
