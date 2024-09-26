@@ -24,8 +24,7 @@ margin-bottom: 5%;
 
 header {
 height: 100vh; 
-overflow-y: scroll;
-overflow-x: hidden;
+overflow: hidden;
 perspective: 10px;
 z-index: -1;
 }
@@ -33,6 +32,7 @@ z-index: -1;
 .background {
   transform: translateZ(-10px) scale(2);
 }
+
 .foreground {
   transform: translateZ(-5px) scale(1.5);
   padding-top: 15rem;
@@ -404,5 +404,9 @@ margin: 3rem;
   .column-grow {
     grid-template-columns: 1fr;
     column-gap: 0; 
+  }
+
+  section {
+    padding-top: 60px;
   }
 }
